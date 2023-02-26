@@ -1,3 +1,5 @@
+/* Animation style */
+
 .wrapper {
     position: relative;
     z-index: -999;
@@ -247,4 +249,118 @@
     50% {
         transform: scaleX(0.85);
     }
+}
+
+/* Page style */
+
+:root {
+    --primary-color: #B05AF1;
+    --secondary-color: #3DE7FE;
+    --light-color: #FFFFFF;
+    --dark-color: #1B2D3A;
+  
+    --bold-text: 900;
+    --normal-text: 400;
+  
+    --logo-size: 75px;
+  }
+
+body {
+    font-family: 'Rubik', sans-serif;
+    background-color: var(--dark-color);
+}
+
+.header {
+    width: 100%;
+    min-height: 20px;
+    padding: 5px 30px;
+
+    background-image: linear-gradient(var(--secondary-color), var(--primary-color));
+}
+
+.animation {
+    color: var(--light-color);
+    text-align: center;
+}
+
+.animation__title {
+    margin-bottom: 16px;
+
+    font-size: 48px;
+}
+
+.animation__text {
+    margin-top: 0;
+    margin-bottom: 40px;
+
+    font-size: 20px;
+}
+
+.header__link {
+    display: flex;
+    max-width: 200px;
+
+    color: var(--bold-text);
+    font-size: 22px;
+    line-height: 28px;
+    font-weight: var(--bold-text);
+    text-decoration: none;
+}
+
+.header__arrow {
+    position: relative;
+
+    width: 30px;
+    height: 4px;
+    margin-top: 12px;
+    margin-right: 10px;
+
+    background-color: var(--dark-color);
+}
+
+.header__arrow::before {
+    position: absolute;
+    content: "";
+    top: -8px;
+    left: -15px;
+
+    border-style: solid;
+    border-width: 10px 20px 10px 0;
+    border-color: transparent var(--dark-color) transparent transparent;
+}
+
+.header__link:hover .header__text,
+.header__link:focus .header__text {
+    color: var(--light-color);
+}
+
+.header__link:hover .header__arrow,
+.header__link:focus .header__arrow  {
+    background-color: var(--light-color);
+}
+
+.header__link:hover .header__arrow::before,
+.header__link:focus .header__arrow::before  {
+    border-color: transparent var(--light-color) transparent transparent;
+}
+
+.header__link:active {
+    border-color: var(--dark-color);
+}
+
+.code__title {
+    text-align: center;
+    color: var(--light-color);
+    font-size: 24px;
+}
+
+.code__info {
+    margin-top: 40px;
+}
+
+.code__text {
+    margin: 0 120px;
+    padding: 40px;
+
+    background-color: var(--light-color);
 }

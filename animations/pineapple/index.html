@@ -6,17 +6,283 @@
         <link rel="stylesheet" href="style.css" />
     </head>
     <body>
-        <h2>Pineapple</h2>
-        <div class="wrapper">
-            <div class="pineapple">
-                <div class="leaf"></div>
-                <div class="eye-left"></div>
-                <div class="eye-right"></div>
-                <div class="mouth"></div>
-                <div class="leg-left"></div>
-                <div class="leg-right"></div>
+        <header class="header">
+            <a class="header__link" href="../../index.html">
+                <div class="header__arrow"></div>
+                <div class="header__text">Home</div>
+            </a>
+        </header>
+        <section class="animation">
+            <h2 class="animation__title">Pineapple</h2>
+            <p class="animation__text">Cute pineapple animation</p>
+            <div class="wrapper">
+                <div class="pineapple">
+                    <div class="leaf"></div>
+                    <div class="eye-left"></div>
+                    <div class="eye-right"></div>
+                    <div class="mouth"></div>
+                    <div class="leg-left"></div>
+                    <div class="leg-right"></div>
+                </div>
+                <div class="shadow"></div>
             </div>
-            <div class="shadow"></div>
-        </div>
+        </section>
+        <section class="code">
+            <div class="code__info">
+                <h3 class="code__title">CSS</h3>
+                <pre class="code__text">
+                    .wrapper {
+                        position: relative;
+                        z-index: -999;
+                    
+                        height: 350px;
+                        width: 350px;
+                        margin: 0 auto;
+                    
+                        border: 1px solid black;
+                        background-color: #fcf8bb;
+                    }
+                    
+                    .pineapple {
+                        position: absolute;
+                        top: 100px;
+                        left: 0;
+                        right: 0;
+                    
+                        height: 180px;
+                        width: 140px;
+                        margin: auto;
+                    
+                        border-radius: 65px;
+                        background-color: #ffaa00;
+                        background-image: repeating-linear-gradient(
+                            135deg,
+                            transparent 0,
+                            transparent 40px,
+                            #ff9700 40px,
+                            #ff9700 52px
+                        ),
+                        repeating-linear-gradient(
+                            45deg,
+                            transparent 0,
+                            transparent 40px,
+                            #ff9700 40px,
+                            #ff9700 52px
+                        );
+                        background-size: 200% 200%;
+                        background-position: 0 17px;
+                    
+                        animation: jump 0.5s infinite;
+                    }
+                    
+                    @keyframes jump {
+                        50% {
+                            top: 95px;
+                        }
+                    }
+                    
+                    .pineapple::before,
+                    .pineapple::after {
+                        position: absolute;
+                        content: "";
+                        z-index: -1;
+                    
+                        height: 80px;
+                        width: 32px;
+                    
+                        background-color: #ffaa00;
+                        border-radius: 25px;
+                    
+                        transform-origin: bottom;
+                    }
+                    
+                    .pineapple::before {
+                        left: 10px;
+                        transform: rotate(-50deg);
+                        animation: hand-left 0.5s infinite;
+                    }
+                    
+                    @keyframes hand-left {
+                        50% {
+                            transform: rotate(-42deg);
+                        }
+                    }
+                    
+                    .pineapple::after {
+                        right: 10px;
+                        transform: rotate(50deg);
+                        animation: hand-right 0.5s infinite;
+                    }
+                    
+                    @keyframes hand-right {
+                        50% {
+                            transform: rotate(42deg);
+                        }
+                    }
+                    
+                    .leaf {
+                        position: absolute;
+                        top: -65px;
+                        left: 0;
+                        right: 0;
+                        z-index: -1;
+                    
+                        height: 70px;
+                        width: 70px;
+                        margin: auto;
+                    
+                        background-color: #498725;
+                        border-radius: 70px 0;
+                    
+                        transform: rotate(135deg);
+                        animation: leaves 0.5s infinite;
+                    }
+                    
+                    @keyframes leaves {
+                        50% {
+                            transform: rotate(135deg) translate(6px, -6px);
+                        }
+                    }
+                    
+                    .leaf::before,
+                    .leaf::after {
+                        position: absolute;
+                        content: "";
+                        top: -5px;
+                    
+                        height: 70px;
+                        width: 70px;
+                    
+                        background-color: #3f6b15;
+                        border-radius: 70px 0;
+                    
+                        transform-origin: right;
+                    }
+                    
+                    .leaf::before {
+                        left: 20px;
+                    
+                        transform: rotate(-40deg);
+                        animation: leaf-left 0.5s infinite;
+                    }
+                    
+                    @keyframes leaf-left {
+                        50% {
+                            transform: rotate(-32deg);
+                        }
+                    }
+                    
+                    .leaf::after {
+                        right: 20px;
+                    
+                        transform: rotate(40deg);
+                        animation: leaf-right 0.5s infinite;
+                    }
+                    
+                    @keyframes leaf-right {
+                        50% {
+                            transform: rotate(32deg);
+                        }
+                    }
+                    
+                    .leg-left,
+                    .leg-right {
+                        position: absolute;
+                        top: 130px;
+                        z-index: -1;
+                    
+                        height: 80px;
+                        width: 32px;
+                    
+                        background-color: #ffaa00;
+                        border-radius: 25px;
+                    }
+                    
+                    .leg-left {
+                        left: 22px;
+                        animation: legs 0.6s 0.3s infinite;
+                    }
+                    
+                    .leg-right {
+                        right: 22px;
+                        animation: legs 0.6s infinite;
+                    }
+                    
+                    @keyframes legs {
+                        50% {
+                            transform: translateY(-15px);
+                        }
+                    }
+                    
+                    .eye-left,
+                    .eye-right {
+                        position: absolute;
+                        top: 70px;
+                    
+                        height: 24px;
+                        width: 24px;
+                    
+                        background-color: #1e1e1e;
+                        border-radius: 50%;
+                    
+                        animation: blink 1s infinite;
+                    }
+                    
+                    .eye-left {
+                        left: 32px;
+                    }
+                    
+                    .eye-right {
+                        right: 32px;
+                    }
+                    
+                    @keyframes blink {
+                        20% {
+                            transform: scaleY(0.3);
+                        }
+                        25% {
+                            transform: scaleY(1);
+                        }
+                    }
+                    
+                    .mouth {
+                        position: absolute;
+                        top: 105px;
+                        left: 0;
+                        right: 0;
+                    
+                        height: 20px;
+                        width: 35px;
+                        margin: auto;
+                    
+                        background-color: #1e1e1e;
+                        border-radius: 0 0 35px 35px;
+                    }
+                    
+                    .shadow {
+                        position: absolute;
+                        top: 290px;
+                        left: 0;
+                        right: 0;
+                        z-index: -2;
+                    
+                        height: 30px;
+                        width: 160px;
+                        margin: auto;
+                    
+                        border-radius: 50%;
+                        background-color: rgba(30, 30, 30, 0.05);
+                    
+                        animation: shadow 0.5s infinite;
+                    }
+                    
+                    @keyframes shadow {
+                        50% {
+                            transform: scaleX(0.85);
+                        }
+                    }
+                </pre>
+            </div>
+        </section>
     </body>
 </html>
